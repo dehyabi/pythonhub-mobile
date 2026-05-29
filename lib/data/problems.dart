@@ -20,6 +20,7 @@ final List<Problem> allProblems = [
     spaceComplexity: 'O(n)',
     explanation: 'Use a hash map to store seen numbers. For each number, check if its complement exists in the map.',
     hints: ['Think about using a hash map for O(1) lookups.', 'For each element, what number would you need to reach the target?'],
+    examples: [Example(input: 'nums = [2,7,11,15], target = 9', output: '[0, 1]', explanation: 'Because nums[0] + nums[1] == 9')],
   ),
   Problem(
     id: '2',
@@ -37,6 +38,7 @@ final List<Problem> allProblems = [
     spaceComplexity: 'O(1)',
     explanation: 'Use two pointers from both ends and swap characters in-place until they meet in the middle.',
     hints: ['Use two pointers approach.', 'Swap characters from both ends moving inward.'],
+    examples: [Example(input: 's = ["h","e","l","l","o"]', output: '["o","l","l","e","h"]')],
   ),
   Problem(
     id: '3',
@@ -56,6 +58,7 @@ final List<Problem> allProblems = [
     spaceComplexity: 'O(1)',
     explanation: 'Reverse half or all of the number mathematically and compare with the original.',
     hints: ['Negative numbers are not palindromes.', 'Reverse the number mathematically without converting to string.'],
+    examples: [Example(input: 'x = 121', output: 'true', explanation: '121 reads the same backward as forward')],
   ),
   Problem(
     id: '4',
@@ -78,6 +81,7 @@ final List<Problem> allProblems = [
     spaceComplexity: 'O(n)',
     explanation: 'Use a stack to track opening brackets. When encountering a closing bracket, check if it matches the top of the stack.',
     hints: ['Use a stack data structure.', 'Match each closing bracket with the most recent unmatched opening bracket.'],
+    examples: [Example(input: 's = "()[]{}"', output: 'true', explanation: 'Each opening bracket has a corresponding closing bracket in the correct order')],
   ),
   Problem(
     id: '5',
@@ -107,6 +111,7 @@ def merge_two_lists(l1, l2):
     spaceComplexity: 'O(1)',
     explanation: 'Iterate through both lists, always taking the smaller element and appending it to the result.',
     hints: ['Use a dummy head node to simplify edge cases.', 'Compare nodes one by one and link the smaller one.'],
+    examples: [Example(input: 'l1 = [1,2,4], l2 = [1,3,4]', output: '[1,1,2,3,4,4]', explanation: 'Merged list contains all nodes from both lists in sorted order')],
   ),
   Problem(
     id: '6',
@@ -127,6 +132,7 @@ def merge_two_lists(l1, l2):
     spaceComplexity: 'O(1)',
     explanation: 'Use two pointers: one for the position of the next unique element, another to scan through the array.',
     hints: ['Use a slow pointer for unique elements position.', 'Only move the slow pointer when a new unique element is found.'],
+    examples: [Example(input: 'nums = [1,1,2]', output: '2', explanation: 'The first two elements are [1, 2], so return length 2')],
   ),
   Problem(
     id: '7',
@@ -145,6 +151,7 @@ def merge_two_lists(l1, l2):
     spaceComplexity: 'O(1)',
     explanation: 'Track the minimum price seen so far and calculate potential profit at each day.',
     hints: ['Track the minimum price encountered so far.', 'Calculate profit if you sold at the current price.'],
+    examples: [Example(input: 'prices = [7,1,5,3,6,4]', output: '5', explanation: 'Buy on day 2 at 1 and sell on day 5 at 6 for a profit of 5')],
   ),
   Problem(
     id: '8',
@@ -163,6 +170,7 @@ def merge_two_lists(l1, l2):
     spaceComplexity: 'O(n)',
     explanation: 'Use a set to track seen numbers. If a number is already in the set, return true.',
     hints: ['A set provides O(1) lookup time.', 'Return True as soon as you find a duplicate.'],
+    examples: [Example(input: 'nums = [1,2,3,1]', output: 'true', explanation: 'The value 1 appears at indices 0 and 3')],
   ),
   Problem(
     id: '9',
@@ -179,6 +187,7 @@ def merge_two_lists(l1, l2):
     spaceComplexity: 'O(1)',
     explanation: 'XOR all elements. Since a ^ a = 0 and a ^ 0 = a, all pairs cancel out leaving the single number.',
     hints: ['XOR of a number with itself is 0.', 'XOR is commutative and associative.'],
+    examples: [Example(input: 'nums = [4,1,2,1,2]', output: '4', explanation: 'All numbers except 4 appear twice, so XOR leaves 4')],
   ),
   Problem(
     id: '10',
@@ -198,6 +207,7 @@ def merge_two_lists(l1, l2):
     spaceComplexity: 'O(1) / O(n) worst case',
     explanation: 'Traverse from right to left. If digit < 9, increment and return. If all are 9, prepend 1.',
     hints: ['Start from the rightmost digit.', 'Handle carry propagation and the all-9s case.'],
+    examples: [Example(input: 'digits = [1,2,3]', output: '[1,2,4]', explanation: 'Adding 1 to 123 gives 124')],
   ),
   Problem(
     id: '11',
@@ -219,6 +229,7 @@ def merge_two_lists(l1, l2):
     spaceComplexity: 'O(1) excluding output',
     explanation: 'Iterate from 1 to n, building the string based on divisibility rules.',
     hints: ['Use modulo operator to check divisibility.', 'Build the string incrementally.'],
+    examples: [Example(input: 'n = 15', output: '["1","2","Fizz","4","Buzz","Fizz","7","8","Fizz","Buzz","11","Fizz","13","14","FizzBuzz"]')],
   ),
   Problem(
     id: '12',
@@ -236,6 +247,7 @@ def merge_two_lists(l1, l2):
     spaceComplexity: 'O(1)',
     explanation: 'Kadane\'s algorithm: at each position, decide whether to start a new subarray or extend the existing one.',
     hints: ['At each element, ask: is it better to start fresh or extend?', 'Track both current running sum and global maximum.'],
+    examples: [Example(input: 'nums = [-2,1,-3,4,-1,2,1,-5,4]', output: '6', explanation: 'The subarray [4,-1,2,1] has the largest sum of 6')],
   ),
   Problem(
     id: '13',
@@ -256,6 +268,7 @@ def merge_two_lists(l1, l2):
     spaceComplexity: 'O(n)',
     explanation: 'Sieve of Eratosthenes: mark multiples of each prime starting from 2.',
     hints: ['Use the Sieve of Eratosthenes algorithm.', 'Only need to sieve up to sqrt(n).'],
+    examples: [Example(input: 'n = 10', output: '4', explanation: 'There are 4 primes less than 10: 2, 3, 5, 7')],
   ),
   Problem(
     id: '14',
@@ -277,6 +290,7 @@ def merge_two_lists(l1, l2):
     spaceComplexity: 'O(1)',
     explanation: 'If a symbol is smaller than the next one, subtract it; otherwise, add it.',
     hints: ['Roman numerals are usually written largest to smallest.', 'When a smaller value precedes a larger value, subtract it.'],
+    examples: [Example(input: 's = "MCMXCIV"', output: '1994', explanation: 'M=1000, CM=900, XC=90, IV=4, so total is 1994')],
   ),
   Problem(
     id: '15',
@@ -290,6 +304,7 @@ def merge_two_lists(l1, l2):
     spaceComplexity: 'O(1)',
     explanation: 'Strip trailing spaces and find the last word, or iterate from the end.',
     hints: ['Be careful with trailing spaces.', 'You can iterate from the end of the string.'],
+    examples: [Example(input: 's = "Hello World"', output: '5', explanation: 'The last word is "World" which has length 5')],
   ),
   Problem(
     id: '16',
@@ -314,6 +329,7 @@ def merge_two_lists(l1, l2):
     spaceComplexity: 'O(1)',
     explanation: 'Binary search for the square root. The answer is the largest number whose square is <= x.',
     hints: ['Use binary search between 1 and x//2.', 'When mid*mid > x, search the left half.'],
+    examples: [Example(input: 'x = 8', output: '2', explanation: 'The square root of 8 is 2.828..., rounded down to 2')],
   ),
   Problem(
     id: '17',
@@ -332,6 +348,7 @@ def merge_two_lists(l1, l2):
     spaceComplexity: 'O(1)',
     explanation: 'Fibonacci sequence. Ways(n) = Ways(n-1) + Ways(n-2). Use rolling variables for space optimization.',
     hints: ['This follows the Fibonacci sequence pattern.', 'You only need the previous two values, not the entire array.'],
+    examples: [Example(input: 'n = 3', output: '3', explanation: 'There are 3 ways to climb 3 stairs: 1+1+1, 1+2, 2+1')],
   ),
   Problem(
     id: '18',
@@ -354,6 +371,7 @@ def merge_two_lists(l1, l2):
     spaceComplexity: 'O(1) - at most 26 letters',
     explanation: 'Count characters in both strings and compare. If counts match, it is an anagram.',
     hints: ['Anagrams have the same characters with the same frequencies.', 'Use a hash map or array of size 26 for counting.'],
+    examples: [Example(input: 's = "anagram", t = "nagaram"', output: 'true', explanation: 'Both strings contain the same characters with the same frequencies')],
   ),
   Problem(
     id: '19',
@@ -370,6 +388,7 @@ def merge_two_lists(l1, l2):
     spaceComplexity: 'O(1)',
     explanation: 'Use the sum formula n*(n+1)/2 and subtract the actual sum to find the missing number.',
     hints: ['Sum of 0 to n is n*(n+1)/2.', 'Subtract actual sum from expected sum.'],
+    examples: [Example(input: 'nums = [3,0,1]', output: '2', explanation: 'The array contains 3 distinct numbers from [0,3], so 2 is missing')],
   ),
   Problem(
     id: '20',
@@ -390,6 +409,7 @@ def merge_two_lists(l1, l2):
     spaceComplexity: 'O(1)',
     explanation: 'Use a pointer for the position to insert the next non-zero element. Fill remaining with zeros.',
     hints: ['Maintain a pointer for where the next non-zero should go.', 'Iterate through and place non-zeros at the front.'],
+    examples: [Example(input: 'nums = [0,1,0,3,12]', output: '[1,3,12,0,0]', explanation: 'Non-zero elements maintain their relative order while zeros move to the end')],
   ),
   Problem(
     id: '21',
@@ -409,6 +429,7 @@ def merge_two_lists(l1, l2):
     spaceComplexity: 'O(min(n, m))',
     explanation: 'Count elements in both arrays and take the minimum count for each common element.',
     hints: ['Use Counter to count frequency of elements.', 'For each common element, add it min(count1, count2) times.'],
+    examples: [Example(input: 'nums1 = [1,2,2,1], nums2 = [2,2]', output: '[2,2]', explanation: '2 appears twice in both arrays, so it appears twice in the result')],
   ),
   Problem(
     id: '22',
@@ -427,6 +448,7 @@ def merge_two_lists(l1, l2):
     spaceComplexity: 'O(1) - 26 letters',
     explanation: 'Count all characters first, then scan the string to find the first character with count 1.',
     hints: ['Count all characters in one pass.', 'Then find the first character with a count of 1.'],
+    examples: [Example(input: 's = "leetcode"', output: '0', explanation: 'The first non-repeating character is l at index 0')],
   ),
   Problem(
     id: '23',
@@ -446,6 +468,7 @@ def merge_two_lists(l1, l2):
     spaceComplexity: 'O(1)',
     explanation: 'Boyer-Moore Voting Algorithm: pair up different elements and cancel them out. The survivor is the majority.',
     hints: ['Think about canceling out pairs of different elements.', 'The majority element survives the cancellation.'],
+    examples: [Example(input: 'nums = [3,2,3]', output: '3', explanation: '3 appears twice, which is more than n/2 = 1.5 times')],
   ),
   Problem(
     id: '24',
@@ -466,6 +489,7 @@ def merge_two_lists(l1, l2):
     spaceComplexity: 'O(1)',
     explanation: 'Iteratively change each node\'s next pointer to point to the previous node.',
     hints: ['Store the next node before changing pointers.', 'Point current node\'s next to the previous node.'],
+    examples: [Example(input: 'head = [1,2,3,4,5]', output: '[5,4,3,2,1]', explanation: 'The linked list is reversed in-place')],
   ),
   Problem(
     id: '25',
@@ -487,6 +511,7 @@ def merge_two_lists(l1, l2):
     spaceComplexity: 'O(1) - limited charset',
     explanation: 'Maintain two mappings. A character in s must consistently map to the same character in t and vice versa.',
     hints: ['Need two-way mapping between characters.', 'A character cannot map to two different characters.'],
+    examples: [Example(input: 's = "egg", t = "add"', output: 'true', explanation: 'e maps to a and g maps to d consistently')],
   ),
   Problem(
     id: '26',
@@ -506,6 +531,7 @@ def merge_two_lists(l1, l2):
     spaceComplexity: 'O(1)',
     explanation: 'Floyd\'s Cycle Detection (Tortoise and Hare): if there\'s a cycle, fast pointer will eventually meet slow pointer.',
     hints: ['Use two pointers moving at different speeds.', 'If there is a cycle, the fast pointer will catch up.'],
+    examples: [Example(input: 'head = [3,2,0,-4], pos = 1', output: 'true', explanation: 'There is a cycle where the tail connects to node at index 1')],
   ),
   Problem(
     id: '27',
@@ -537,6 +563,7 @@ def merge_two_lists(l1, l2):
     spaceComplexity: 'O(n)',
     explanation: 'Use an auxiliary stack that keeps track of minimums. Push to min_stack only when a new minimum is encountered.',
     hints: ['Maintain a separate stack for minimums.', 'Only push to min stack when value is <= current min.'],
+    examples: [Example(input: 'push(-2), push(0), push(-3), getMin(), pop(), top()', output: '-3, 0', explanation: 'getMin returns -3; after pop, top is 0')],
   ),
   Problem(
     id: '28',
@@ -558,6 +585,7 @@ def merge_two_lists(l1, l2):
     spaceComplexity: 'O(h) - recursion stack',
     explanation: 'Recursively check if left subtree is a mirror of the right subtree.',
     hints: ['A tree is symmetric if left subtree mirrors right subtree.', 'Compare outer and inner pairs recursively.'],
+    examples: [Example(input: 'root = [1,2,2,3,4,4,3]', output: 'true', explanation: 'The tree is a mirror of itself around the center')],
   ),
   Problem(
     id: '29',
@@ -587,6 +615,7 @@ def level_order(root):
     spaceComplexity: 'O(w) where w is max width',
     explanation: 'Use BFS with a queue. Process all nodes at the current level before moving to the next.',
     hints: ['Use a queue for BFS.', 'Process nodes level by level.'],
+    examples: [Example(input: 'root = [3,9,20,null,null,15,7]', output: '[[3],[9,20],[15,7]]', explanation: 'Nodes are traversed level by level from top to bottom')],
   ),
   Problem(
     id: '30',
@@ -602,6 +631,7 @@ def level_order(root):
     spaceComplexity: 'O(h)',
     explanation: 'Recursively find the maximum depth of left and right subtrees and add 1 for the current node.',
     hints: ['Base case: null node has depth 0.', 'Recursive case: 1 + max of left and right depths.'],
+    examples: [Example(input: 'root = [3,9,20,null,null,15,7]', output: '3', explanation: 'The maximum depth is 3 along the path 3 -> 20 -> 15 or 3 -> 20 -> 7')],
   ),
   Problem(
     id: '31',
@@ -622,6 +652,7 @@ def level_order(root):
     spaceComplexity: 'O(h)',
     explanation: 'Each node must be within a valid range. Pass down min and max constraints for left and right subtrees.',
     hints: ['Each node must be greater than all left descendants and less than all right descendants.', 'Pass valid ranges down the tree.'],
+    examples: [Example(input: 'root = [2,1,3]', output: 'true', explanation: 'Left child 1 is less than 2, and right child 3 is greater than 2')],
   ),
   Problem(
     id: '32',
@@ -641,6 +672,7 @@ def level_order(root):
     spaceComplexity: 'O(h)',
     explanation: 'Recursively check if values are equal and left/right subtrees are also the same.',
     hints: ['Base cases handle null nodes.', 'Recursive case checks value and both subtrees.'],
+    examples: [Example(input: 'p = [1,2,3], q = [1,2,3]', output: 'true', explanation: 'Both trees have the same structure and node values')],
   ),
   Problem(
     id: '33',
@@ -658,6 +690,7 @@ def level_order(root):
     spaceComplexity: 'O(1)',
     explanation: 'n & (n-1) clears the lowest set bit. Count how many times we can do this until n becomes 0.',
     hints: ['n & (n-1) clears the lowest set bit.', 'Count iterations until n becomes 0.'],
+    examples: [Example(input: 'n = 11', output: '3', explanation: '11 in binary is 1011, which has 3 set bits')],
   ),
 
   // ==================== INTERMEDIATE (34-66) ====================
@@ -693,6 +726,7 @@ def level_order(root):
     spaceComplexity: 'O(1) excluding output',
     explanation: 'Sort the array. For each element, use two pointers to find pairs that sum to the negative of that element.',
     hints: ['Sorting helps avoid duplicates and use two pointers.', 'Skip duplicate values to ensure unique triplets.'],
+    examples: [Example(input: 'nums = [-1,0,1,2,-1,-4]', output: '[[-1,-1,2],[-1,0,1]]', explanation: 'Two unique triplets sum to zero')],
   ),
   Problem(
     id: '35',
@@ -715,6 +749,7 @@ def level_order(root):
     spaceComplexity: 'O(1)',
     explanation: 'Two pointers from both ends. Move the pointer with smaller height because it limits the area.',
     hints: ['Area = width * min(height[left], height[right]).', 'Move the pointer with the smaller height inward.'],
+    examples: [Example(input: 'height = [1,8,6,2,5,4,8,3,7]', output: '49', explanation: 'Lines at indices 1 and 8 form the max area of 49')],
   ),
   Problem(
     id: '36',
@@ -735,6 +770,7 @@ def level_order(root):
     spaceComplexity: 'O(min(m, n)) where m is charset size',
     explanation: 'Sliding window: expand the window, and when a duplicate is found, shrink from the left.',
     hints: ['Use a sliding window approach.', 'Track the last seen index of each character.'],
+    examples: [Example(input: 's = "abcabcbb"', output: '3', explanation: 'The longest substring without repeating characters is "abc"')],
   ),
   Problem(
     id: '37',
@@ -755,6 +791,7 @@ def level_order(root):
     spaceComplexity: 'O(1)',
     explanation: 'Modified binary search. If mid element > right element, minimum must be in right half.',
     hints: ['The array is sorted but rotated.', 'Compare middle element with rightmost to determine which half contains minimum.'],
+    examples: [Example(input: 'nums = [3,4,5,1,2]', output: '1', explanation: 'The original array was [1,2,3,4,5] rotated 3 times')],
   ),
   Problem(
     id: '38',
@@ -783,6 +820,7 @@ def level_order(root):
     spaceComplexity: 'O(1)',
     explanation: 'Determine which half is sorted, then check if target lies within that sorted half.',
     hints: ['One half is always sorted.', 'Check if target is in the sorted half.'],
+    examples: [Example(input: 'nums = [4,5,6,7,0,1,2], target = 0', output: '4', explanation: '0 is found at index 4 in the rotated sorted array')],
   ),
   Problem(
     id: '39',
@@ -806,6 +844,7 @@ def level_order(root):
     spaceComplexity: 'O(1) excluding output',
     explanation: 'Compute prefix products in one pass, then suffix products in reverse, multiplying into the result.',
     hints: ['Compute prefix and suffix products.', 'You can do it in O(1) extra space by using the output array.'],
+    examples: [Example(input: 'nums = [1,2,3,4]', output: '[24,12,8,6]', explanation: 'answer[i] is the product of all elements except nums[i]')],
   ),
   Problem(
     id: '40',
@@ -830,6 +869,7 @@ def level_order(root):
     spaceComplexity: 'O(1) excluding output',
     explanation: 'Peel layers from outside to inside: top row, right column, bottom row (reversed), left column (reversed).',
     hints: ['Process the outer layer first, then recurse on inner matrix.', 'Be careful with empty matrix conditions.'],
+    examples: [Example(input: 'matrix = [[1,2,3],[4,5,6],[7,8,9]]', output: '[1,2,3,6,9,8,7,4,5]', explanation: 'Elements are returned in spiral order: top row, right col, bottom row, left col')],
   ),
   Problem(
     id: '41',
@@ -848,6 +888,7 @@ def level_order(root):
     spaceComplexity: 'O(1)',
     explanation: 'Track the farthest position reachable. If current index exceeds max_reach, we cannot proceed.',
     hints: ['Track the farthest index you can reach.', 'If current index exceeds max reach, return False.'],
+    examples: [Example(input: 'nums = [2,3,1,1,4]', output: 'true', explanation: 'From index 0, jump to 1; from 1, jump to 4; reach the end')],
   ),
   Problem(
     id: '42',
@@ -871,6 +912,7 @@ def level_order(root):
     spaceComplexity: 'O(n)',
     explanation: 'Sort by start time. If current interval overlaps with last merged, extend the end; otherwise add new.',
     hints: ['Sort intervals by start time.', 'Check if current interval overlaps with the last merged one.'],
+    examples: [Example(input: 'intervals = [[1,3],[2,6],[8,10],[15,18]]', output: '[[1,6],[8,10],[15,18]]', explanation: '[1,3] and [2,6] overlap and merge into [1,6]')],
   ),
   Problem(
     id: '43',
@@ -897,6 +939,7 @@ def level_order(root):
     spaceComplexity: 'O(n)',
     explanation: 'Add all intervals before the new one, merge overlapping ones, then add the rest.',
     hints: ['Split into three parts: before, overlapping, and after.', 'Merge all overlapping intervals into one.'],
+    examples: [Example(input: 'intervals = [[1,3],[6,9]], newInterval = [2,5]', output: '[[1,5],[6,9]]', explanation: '[2,5] overlaps with [1,3] and merges into [1,5]')],
   ),
   Problem(
     id: '44',
@@ -920,6 +963,7 @@ def level_order(root):
     spaceComplexity: 'O(1)',
     explanation: 'Greedy: sort by end time and always keep the interval that ends earliest to maximize remaining space.',
     hints: ['Sort by end time.', 'Greedily keep intervals that end earliest.'],
+    examples: [Example(input: 'intervals = [[1,2],[2,3],[3,4],[1,3]]', output: '1', explanation: 'Remove [1,3] so the rest are non-overlapping')],
   ),
   Problem(
     id: '45',
@@ -938,6 +982,7 @@ def level_order(root):
     spaceComplexity: 'O(n * k)',
     explanation: 'Use sorted string as key. All anagrams sort to the same string and fall into the same bucket.',
     hints: ['Anagrams have the same sorted characters.', 'Use sorted string as a hash key.'],
+    examples: [Example(input: 'strs = ["eat","tea","tan","ate","nat","bat"]', output: '[["bat"],["nat","tan"],["ate","eat","tea"]]', explanation: 'Anagrams are grouped together regardless of order')],
   ),
   Problem(
     id: '46',
@@ -954,6 +999,7 @@ def level_order(root):
     spaceComplexity: 'O(n)',
     explanation: 'Count frequencies, then use a heap to get the k elements with highest counts.',
     hints: ['Count frequency with Counter.', 'Use heapq.nlargest for efficient top-k selection.'],
+    examples: [Example(input: 'nums = [1,1,1,2,2,3], k = 2', output: '[1,2]', explanation: '1 appears 3 times, 2 appears 2 times; they are the top 2 frequent elements')],
   ),
   Problem(
     id: '47',
@@ -977,6 +1023,7 @@ def level_order(root):
     spaceComplexity: 'O(n)',
     explanation: 'Use a set for O(1) lookups. Only start counting from numbers that are the beginning of a sequence.',
     hints: ['Use a set for O(1) membership checks.', 'Only start counting when num-1 is not in the set.'],
+    examples: [Example(input: 'nums = [100,4,200,1,3,2]', output: '4', explanation: 'The longest consecutive sequence is [1,2,3,4] with length 4')],
   ),
   Problem(
     id: '48',
@@ -998,6 +1045,7 @@ def level_order(root):
     spaceComplexity: 'O(n)',
     explanation: 'DP: dp[i] is true if s[:i] can be segmented. For each i, check all possible previous breaks.',
     hints: ['dp[i] represents whether s[0:i] can be segmented.', 'Check all substrings ending at i.'],
+    examples: [Example(input: 's = "leetcode", wordDict = ["leet","code"]', output: 'true', explanation: 'The string can be segmented as "leet code"')],
   ),
   Problem(
     id: '49',
@@ -1024,6 +1072,7 @@ def level_order(root):
     spaceComplexity: 'O(n) - can optimize to O(1)',
     explanation: 'DP: each digit can be decoded alone (if not 0), and each pair can be decoded if between 10-26.',
     hints: ['A single digit can be decoded if it is 1-9.', 'Two digits can be decoded if they form 10-26.'],
+    examples: [Example(input: 's = "226"', output: '3', explanation: '"226" can be decoded as "BZ" (2 26), "VF" (22 6), or "BBF" (2 2 6)')],
   ),
   Problem(
     id: '50',
@@ -1043,6 +1092,7 @@ def level_order(root):
     spaceComplexity: 'O(1)',
     explanation: 'DP with space optimization: at each house, choose to rob it (prev2 + current) or skip it (prev1).',
     hints: ['At each house, the max is max(rob current + max from 2 ago, max from 1 ago).', 'Use two variables to track previous states.'],
+    examples: [Example(input: 'nums = [2,7,9,3,1]', output: '12', explanation: 'Rob houses 0, 2, and 4 for a total of 2+9+1=12')],
   ),
   Problem(
     id: '51',
@@ -1061,6 +1111,7 @@ def level_order(root):
     spaceComplexity: 'O(amount)',
     explanation: 'DP: dp[i] is the minimum coins to make amount i. For each coin, update all reachable amounts.',
     hints: ['dp[i] = minimum coins to make amount i.', 'For each coin, update all amounts from coin to target.'],
+    examples: [Example(input: 'coins = [1,2,5], amount = 11', output: '3', explanation: '11 = 5 + 5 + 1, so 3 coins are needed')],
   ),
   Problem(
     id: '52',
@@ -1082,6 +1133,7 @@ def level_order(root):
     spaceComplexity: 'O(n)',
     explanation: 'Patience sorting: maintain smallest tail for each length. Use binary search to find insertion point.',
     hints: ['tails[i] is the smallest tail of all increasing subsequences of length i+1.', 'Use binary search to find the correct position.'],
+    examples: [Example(input: 'nums = [10,9,2,5,3,7,101,18]', output: '4', explanation: 'The longest increasing subsequence is [2,3,7,101] with length 4')],
   ),
   Problem(
     id: '53',
@@ -1104,6 +1156,7 @@ def level_order(root):
     spaceComplexity: 'O(target)',
     explanation: 'Subset sum problem: check if there exists a subset that sums to total/2. 1D DP with reverse iteration.',
     hints: ['If total sum is odd, impossible to partition equally.', 'This is a 0/1 knapsack variant.'],
+    examples: [Example(input: 'nums = [1,5,11,5]', output: 'true', explanation: 'The array can be partitioned into [1,5,5] and [11], both summing to 11')],
   ),
   Problem(
     id: '54',
@@ -1134,6 +1187,7 @@ def level_order(root):
     spaceComplexity: 'O(m * n) - recursion stack',
     explanation: 'DFS/BFS from each unvisited land cell. Mark all connected land as visited. Count the number of DFS initiations.',
     hints: ['Traverse the grid and start DFS/BFS whenever you find unvisited land.', 'Mark visited cells to avoid double counting.'],
+    examples: [Example(input: 'grid = [["1","1","0","0","0"],["1","1","0","0","0"],["0","0","1","0","0"],["0","0","0","1","1"]]', output: '3', explanation: 'There are three separate islands in the grid')],
   ),
   Problem(
     id: '55',
@@ -1163,6 +1217,7 @@ def clone_graph(node):
     spaceComplexity: 'O(V)',
     explanation: 'DFS with hash map to track cloned nodes. If node already cloned, return the clone; otherwise create and recursively clone neighbors.',
     hints: ['Use a hash map to track original node to clone mapping.', 'Recursively clone all neighbors.'],
+    examples: [Example(input: 'adjList = [[2,4],[1,3],[2,4],[1,3]]', output: '[[2,4],[1,3],[2,4],[1,3]]', explanation: 'A deep copy of the connected undirected graph is returned')],
   ),
   Problem(
     id: '56',
@@ -1191,6 +1246,7 @@ def clone_graph(node):
     spaceComplexity: 'O(V + E)',
     explanation: 'Kahn\'s algorithm for topological sort. Process courses with no prerequisites, then reduce in-degrees of dependent courses.',
     hints: ['This is a cycle detection problem in a directed graph.', 'Use Kahn\'s algorithm (BFS topological sort).'],
+    examples: [Example(input: 'numCourses = 2, prerequisites = [[1,0]]', output: 'true', explanation: 'Course 0 must be taken before course 1, so it is possible to finish all courses')],
   ),
   Problem(
     id: '57',
@@ -1223,6 +1279,7 @@ def clone_graph(node):
     spaceComplexity: 'O(m * n)',
     explanation: 'DFS from ocean borders inward. A cell can flow to an ocean if there is a path of non-increasing heights to that ocean.',
     hints: ['Start DFS from the ocean borders instead of from each cell.', 'A cell can flow to Pacific/Atlantic if there is a path from the ocean to it with non-decreasing heights.'],
+    examples: [Example(input: 'heights = [[1,2,2,3,5],[3,2,3,4,4],[2,4,5,3,1],[6,7,1,4,5],[5,1,1,2,4]]', output: '[[0,4],[1,3],[1,4],[2,2],[3,0],[3,1],[4,0]]', explanation: 'Water from these cells can reach both the Pacific and Atlantic oceans')],
   ),
   Problem(
     id: '58',
@@ -1258,6 +1315,7 @@ def clone_graph(node):
     spaceComplexity: 'O(m * n)',
     explanation: 'Multi-source BFS. Start from all rotten oranges simultaneously and spread minute by minute.',
     hints: ['Use BFS starting from all rotten oranges simultaneously.', 'Track the number of fresh oranges to determine if all can be rotted.'],
+    examples: [Example(input: 'grid = [[2,1,1],[1,1,0],[0,1,1]]', output: '4', explanation: 'All fresh oranges become rotten in 4 minutes')],
   ),
   Problem(
     id: '59',
@@ -1285,6 +1343,7 @@ class TimeMap:
     spaceComplexity: 'O(n)',
     explanation: 'Store values sorted by timestamp. Use binary search to find the largest timestamp <= given timestamp.',
     hints: ['Values are set in non-decreasing timestamp order.', 'Use bisect_right to find the latest valid timestamp.'],
+    examples: [Example(input: 'set("foo","bar",1), get("foo",1)', output: '"bar"', explanation: 'The value set at timestamp 1 is returned for timestamp 1')],
   ),
   Problem(
     id: '60',
@@ -1315,6 +1374,7 @@ class LRUCache:
     spaceComplexity: 'O(capacity)',
     explanation: 'OrderedDict maintains insertion order. Move accessed items to end. Evict from the beginning when over capacity.',
     hints: ['OrderedDict provides O(1) move_to_end and popitem.', 'Move accessed items to the end to mark as recently used.'],
+    examples: [Example(input: 'LRUCache(2), put(1,1), put(2,2), get(1), put(3,3), get(2)', output: '1, -1', explanation: 'get(1) returns 1; after put(3,3), key 2 is evicted, so get(2) returns -1')],
   ),
   Problem(
     id: '61',
@@ -1343,6 +1403,7 @@ class LRUCache:
     spaceComplexity: 'O(w)',
     explanation: 'BFS level by level. The last node of each level is visible from the right side.',
     hints: ['Do level-order traversal.', 'The last node in each level is visible from the right.'],
+    examples: [Example(input: 'root = [1,2,3,null,5,null,4]', output: '[1,3,4]', explanation: 'The rightmost nodes at each level are 1, 3, and 4')],
   ),
   Problem(
     id: '62',
@@ -1362,6 +1423,7 @@ class LRUCache:
     spaceComplexity: 'O(1)',
     explanation: 'In BST, LCA is the first node where p and q diverge (one is on left, other on right, or one is the node itself).',
     hints: ['In BST, all left descendants are smaller and right are larger.', 'The LCA is where the paths to p and q diverge.'],
+    examples: [Example(input: 'root = [6,2,8,0,4,7,9], p = 2, q = 8', output: '6', explanation: 'The LCA of nodes 2 and 8 is 6')],
   ),
   Problem(
     id: '63',
@@ -1385,6 +1447,7 @@ class LRUCache:
     spaceComplexity: 'O(h)',
     explanation: 'In-order traversal of BST yields sorted order. Do iterative in-order and stop at the kth element.',
     hints: ['In-order traversal of BST gives sorted sequence.', 'Use iterative in-order and stop when you reach the kth element.'],
+    examples: [Example(input: 'root = [3,1,4,null,2], k = 1', output: '1', explanation: 'The 1st smallest element in the BST is 1')],
   ),
   Problem(
     id: '64',
@@ -1411,6 +1474,7 @@ class LRUCache:
     spaceComplexity: 'O(n)',
     explanation: 'First element in preorder is root. Find it in inorder to split left and right subtrees. Recurse.',
     hints: ['First element of preorder is the root.', 'Find root in inorder to determine left and right subtree sizes.'],
+    examples: [Example(input: 'preorder = [3,9,20,15,7], inorder = [9,3,15,20,7]', output: '[3,9,20,null,null,15,7]', explanation: 'The tree is reconstructed using preorder and inorder traversal rules')],
   ),
   Problem(
     id: '65',
@@ -1441,6 +1505,7 @@ class LRUCache:
     spaceComplexity: 'O(n)',
     explanation: 'Pre-order traversal with null markers. Use iterator during deserialization to consume values in order.',
     hints: ['Use pre-order traversal and mark null nodes.', 'Use an iterator to consume values sequentially during deserialization.'],
+    examples: [Example(input: 'root = [1,2,3,null,null,4,5]', output: '"1,2,3,N,N,4,5,N,N,N,N"', explanation: 'The tree is serialized to a string and can be deserialized back to the same tree')],
   ),
   Problem(
     id: '66',
@@ -1469,6 +1534,7 @@ class MedianFinder:
     spaceComplexity: 'O(n)',
     explanation: 'Two heaps: max heap for lower half, min heap for upper half. Balance them so their sizes differ by at most 1.',
     hints: ['Use a max heap for the lower half and min heap for the upper half.', 'Balance the heaps after each insertion.'],
+    examples: [Example(input: 'addNum(1), addNum(2), findMedian(), addNum(3), findMedian()', output: '1.5, 2.0', explanation: 'After [1,2] median is (1+2)/2 = 1.5; after [1,2,3] median is 2')],
   ),
 
   // ==================== ADVANCED (67-100) ====================
@@ -1495,6 +1561,7 @@ class MedianFinder:
     spaceComplexity: 'O(1)',
     explanation: 'Two pointers: water trapped at a position is determined by the shorter of max left and max right heights.',
     hints: ['Water level at any point is determined by the minimum of max left and max right.', 'Use two pointers from both ends.'],
+    examples: [Example(input: 'height = [0,1,0,2,1,0,1,3,2,1,2,1]', output: '6', explanation: 'The elevation map traps 6 units of water')],
   ),
   Problem(
     id: '68',
@@ -1515,6 +1582,7 @@ class MedianFinder:
     spaceComplexity: 'O(1)',
     explanation: 'Cyclic sort: place each number x at index x-1. The first index i where nums[i] != i+1 gives the answer.',
     hints: ['The answer must be in range [1, n+1].', 'Try to place each number at its correct index.'],
+    examples: [Example(input: 'nums = [3,4,-1,1]', output: '2', explanation: 'The smallest missing positive integer is 2')],
   ),
   Problem(
     id: '69',
@@ -1540,6 +1608,7 @@ def max_sliding_window(nums, k):
     spaceComplexity: 'O(k)',
     explanation: 'Monotonic deque: maintain indices in decreasing order of values. Front is always the max of current window.',
     hints: ['Use a deque to maintain indices of elements in decreasing order.', 'Remove elements that are out of the window or smaller than current.'],
+    examples: [Example(input: 'nums = [1,3,-1,-3,5,3,6,7], k = 3', output: '[3,3,5,5,6,7]', explanation: 'The maximum in each window of size 3 is shown')],
   ),
   Problem(
     id: '70',
@@ -1568,6 +1637,7 @@ def min_window(s, t):
     spaceComplexity: 'O(|t|)',
     explanation: 'Expand window until all characters are found, then shrink from left to find minimum valid window.',
     hints: ['Expand the window until it contains all required characters.', 'Then shrink from the left as much as possible while still valid.'],
+    examples: [Example(input: 's = "ADOBECODEBANC", t = "ABC"', output: '"BANC"', explanation: '"BANC" is the minimum window substring containing A, B, and C')],
   ),
   Problem(
     id: '71',
@@ -1617,6 +1687,7 @@ class Solution:
     spaceComplexity: 'O(total characters in words)',
     explanation: 'Build a trie from words, then DFS from each cell. Prune trie nodes when words are found to reduce redundant work.',
     hints: ['Build a Trie from the word list for efficient prefix matching.', 'Prune found words from the trie to avoid duplicates.'],
+    examples: [Example(input: 'board = [["o","a","a","n"],["e","t","a","e"],["i","h","k","r"],["i","f","l","v"]], words = ["oath","pea","eat","rain"]', output: '["eat","oath"]', explanation: 'The words "eat" and "oath" can be found on the board')],
   ),
   Problem(
     id: '72',
@@ -1642,6 +1713,7 @@ class Solution:
     spaceComplexity: 'O(m * n)',
     explanation: 'DP: dp[i][j] is the edit distance between first i chars of word1 and first j chars of word2. Three operations: delete, insert, replace.',
     hints: ['dp[i][j] represents edit distance between prefixes.', 'If characters match, no cost. Otherwise, 1 + min(insert, delete, replace).'],
+    examples: [Example(input: 'word1 = "horse", word2 = "ros"', output: '3', explanation: 'horse -> rorse (replace h with r) -> rose (remove r) -> ros (remove e)')],
   ),
   Problem(
     id: '73',
@@ -1668,6 +1740,7 @@ class Solution:
     spaceComplexity: 'O(m * n)',
     explanation: 'DP with memoization. Handle * by choosing to skip the pattern or consume one matching character from s.',
     hints: ['* can match zero or more of the preceding element.', 'Use memoization to avoid recomputing states.'],
+    examples: [Example(input: 's = "aa", p = "a*"', output: 'true', explanation: '* matches zero or more of the preceding a, so "a*" matches "aa"')],
   ),
   Problem(
     id: '74',
@@ -1698,6 +1771,7 @@ class Solution:
     spaceComplexity: 'O(1)',
     explanation: 'Greedy: track the last star position. When mismatch occurs, backtrack to last star and consume one more character.',
     hints: ['* can match any sequence including empty.', 'Track last star position to backtrack when mismatches occur.'],
+    examples: [Example(input: 's = "aa", p = "*"', output: 'true', explanation: '* matches any sequence, so it matches "aa"')],
   ),
   Problem(
     id: '75',
@@ -1718,6 +1792,7 @@ class Solution:
     spaceComplexity: 'O(n)',
     explanation: 'DP: dp[j] is the number of ways to form t[:j] from s[:i]. If characters match, add ways without using current char.',
     hints: ['dp[j] = number of ways to form first j characters of t.', 'If s[i] == t[j], dp[j] += dp[j-1].'],
+    examples: [Example(input: 's = "rabbbit", t = "rabbit"', output: '3', explanation: 'There are 3 ways to delete one b to form "rabbit"')],
   ),
   Problem(
     id: '76',
@@ -1740,6 +1815,7 @@ class Solution:
     spaceComplexity: 'O(n^2)',
     explanation: 'DP: think backwards - which balloon to burst last in range [left, right]. Add padding of 1 at boundaries.',
     hints: ['Think about which balloon is burst LAST in a range.', 'Add virtual balloons with value 1 at both ends.'],
+    examples: [Example(input: 'nums = [3,1,5,8]', output: '167', explanation: 'The maximum coins collected by bursting balloons optimally is 167')],
   ),
   Problem(
     id: '77',
@@ -1764,6 +1840,7 @@ class Solution:
     spaceComplexity: 'O(n)',
     explanation: 'Stack stores indices. Push for (, pop for ). Calculate length using current index and new stack top after pop.',
     hints: ['Use a stack to track indices of unmatched parentheses.', 'Calculate length when a match is found.'],
+    examples: [Example(input: 's = "(()"', output: '2', explanation: 'The longest valid parentheses substring is "()" with length 2')],
   ),
   Problem(
     id: '78',
@@ -1787,6 +1864,7 @@ class Solution:
     spaceComplexity: 'O(n)',
     explanation: 'DP: dp[j] means s1[:i] and s2[:j] can form s3[:i+j]. Update row by row with 1D array.',
     hints: ['dp[i][j] represents whether s3[:i+j] can be formed.', 'Check if current character matches either s1[i-1] or s2[j-1].'],
+    examples: [Example(input: 's1 = "aabcc", s2 = "dbbca", s3 = "aadbbcbcac"', output: 'true', explanation: 's3 is formed by interleaving s1 and s2')],
   ),
   Problem(
     id: '79',
@@ -1815,6 +1893,7 @@ class Solution:
     spaceComplexity: 'O(n^3)',
     explanation: '3D DP: dp[i][j][len] means s1[i:i+len] and s2[j:j+len] are scrambles. Try all split points and both orientations.',
     hints: ['A string can be split at any point and the two halves can be swapped.', 'Use 3D DP to track all substrings.'],
+    examples: [Example(input: 's1 = "great", s2 = "rgeat"', output: 'true', explanation: '"rgeat" is a scrambled string of "great"')],
   ),
   Problem(
     id: '80',
@@ -1841,6 +1920,7 @@ class Solution:
     spaceComplexity: 'O(k * n)',
     explanation: 'DP optimized with max_diff. If k >= n/2, treat as unlimited transactions. Otherwise, optimize inner loop.',
     hints: ['If k >= n/2, it is equivalent to unlimited transactions.', 'Use max_diff to optimize the DP transition.'],
+    examples: [Example(input: 'k = 2, prices = [3,2,6,5,0,3]', output: '7', explanation: 'Buy at 2, sell at 6 (profit 4); buy at 0, sell at 3 (profit 3); total 7')],
   ),
   Problem(
     id: '81',
@@ -1869,6 +1949,7 @@ class Solution:
     spaceComplexity: 'O(n)',
     explanation: 'Expand around centers to find all palindromes. Update DP: dp[i] = min cuts for s[:i].',
     hints: ['Expand around center to find all palindromic substrings.', 'dp[i] = minimum cuts for prefix of length i.'],
+    examples: [Example(input: 's = "aab"', output: '1', explanation: 'The palindrome partitioning ["aa","b"] needs only 1 cut')],
   ),
   Problem(
     id: '82',
@@ -1898,6 +1979,7 @@ def ladder_length(beginWord, endWord, wordList):
     spaceComplexity: 'O(m * n)',
     explanation: 'BFS on word transformation graph. Try changing each character to a-z and check if the new word exists in the dictionary.',
     hints: ['Treat each word as a node; edges exist if words differ by one character.', 'BFS guarantees shortest path.'],
+    examples: [Example(input: 'beginWord = "hit", endWord = "cog", wordList = ["hot","dot","dog","lot","log","cog"]', output: '5', explanation: 'The shortest sequence is "hit" -> "hot" -> "dot" -> "dog" -> "cog"')],
   ),
   Problem(
     id: '83',
@@ -1947,6 +2029,7 @@ def find_ladders(beginWord, endWord, wordList):
     spaceComplexity: 'O(n * m^2)',
     explanation: 'Two-phase: BFS to build the shortest path DAG, then DFS to enumerate all shortest paths.',
     hints: ['First BFS to find shortest distances and build DAG.', 'Then DFS to enumerate all shortest paths.'],
+    examples: [Example(input: 'beginWord = "hit", endWord = "cog", wordList = ["hot","dot","dog","lot","log","cog"]', output: '[["hit","hot","dot","dog","cog"],["hit","hot","lot","log","cog"]]', explanation: 'There are two shortest transformation sequences')],
   ),
   Problem(
     id: '84',
@@ -1984,6 +2067,7 @@ def alien_order(words):
     spaceComplexity: 'O(1) - 26 letters max',
     explanation: 'Build graph by comparing adjacent words. Topological sort to determine letter ordering. Detect cycles.',
     hints: ['Compare adjacent words to find character ordering.', 'Use topological sort (Kahn\'s algorithm).'],
+    examples: [Example(input: 'words = ["wrt","wrf","er","ett","rftt"]', output: '"wertf"', explanation: 'The derived order from the sorted dictionary is wertf')],
   ),
   Problem(
     id: '85',
@@ -2005,6 +2089,7 @@ def alien_order(words):
     spaceComplexity: 'O(n)',
     explanation: 'Bellman-Ford variant: relax all edges k+1 times. Use temp array to ensure stops constraint is respected.',
     hints: ['This is a shortest path with constraint on number of edges.', 'Use Bellman-Ford with exactly k+1 relaxation passes.'],
+    examples: [Example(input: 'n = 4, flights = [[0,1,100],[1,2,100],[2,0,100],[1,3,600],[2,3,200]], src = 0, dst = 3, k = 1', output: '700', explanation: 'Cheapest path is 0 -> 1 -> 3 with cost 700 and at most 1 stop')],
   ),
   Problem(
     id: '86',
@@ -2037,6 +2122,7 @@ def network_delay_time(times, n, k):
     spaceComplexity: 'O(V + E)',
     explanation: 'Dijkstra\'s algorithm from source k. The answer is the maximum distance among all nodes.',
     hints: ['Use Dijkstra to find shortest path from source to all nodes.', 'Return the maximum of all shortest distances.'],
+    examples: [Example(input: 'times = [[2,1,1],[2,3,1],[3,4,1]], n = 4, k = 2', output: '2', explanation: 'The signal takes 2 time units to reach all nodes from node 2')],
   ),
   Problem(
     id: '87',
@@ -2067,6 +2153,7 @@ def swim_in_water(grid):
     spaceComplexity: 'O(n^2)',
     explanation: 'Dijkstra on grid: cost to enter cell is max(current_time, cell_elevation). Find minimum max elevation along any path.',
     hints: ['The cost to reach a cell is the maximum elevation encountered so far.', 'Use Dijkstra\'s algorithm with this modified cost.'],
+    examples: [Example(input: 'grid = [[0,2],[1,3]]', output: '3', explanation: 'At time 3, the water depth allows reaching the bottom-right cell')],
   ),
   Problem(
     id: '88',
@@ -2103,6 +2190,7 @@ def swim_in_water(grid):
     spaceComplexity: 'O(n^2)',
     explanation: 'Label each island with unique ID and record sizes. For each 0, check neighboring islands and calculate potential size.',
     hints: ['First, label all islands and record their sizes.', 'For each 0, sum sizes of all unique neighboring islands plus 1.'],
+    examples: [Example(input: 'grid = [[1,0],[0,1]]', output: '3', explanation: 'Changing one 0 to 1 connects two islands into one of size 3')],
   ),
   Problem(
     id: '89',
@@ -2136,6 +2224,7 @@ def shortest_path(grid, k):
     spaceComplexity: 'O(m * n * k)',
     explanation: 'BFS with state (row, col, obstacles_eliminated). Track visited for each elimination count separately.',
     hints: ['State includes position and number of obstacles eliminated.', 'BFS naturally finds shortest path.'],
+    examples: [Example(input: 'grid = [[0,0,0],[1,1,0],[0,0,0],[0,1,1],[0,0,0]], k = 1', output: '6', explanation: 'The shortest path with at most 1 obstacle eliminated has length 6')],
   ),
   Problem(
     id: '90',
@@ -2170,6 +2259,7 @@ def shortest_path(grid, k):
     spaceComplexity: 'O(total content + paths)',
     explanation: 'Use dictionaries to track valid paths and file contents. Auto-create parent directories on mkdir.',
     hints: ['Store valid paths and file contents separately.', 'Auto-create all parent directories when mkdir is called.'],
+    examples: [Example(input: 'mkdir("/a/b/c"), addContentToFile("/a/b/c/d","hello"), readContentFromFile("/a/b/c/d")', output: '"hello"', explanation: 'Content written to the file is read back correctly')],
   ),
   Problem(
     id: '91',
@@ -2219,6 +2309,7 @@ class LFUCache:
     spaceComplexity: 'O(capacity)',
     explanation: 'Track frequency of each key. Evict the least frequently used key; if tie, evict the oldest among them.',
     hints: ['Track key frequencies with a hash map.', 'Evict the key with minimum frequency when capacity is exceeded.'],
+    examples: [Example(input: 'LFUCache(2), put(1,1), put(2,2), get(1), put(3,3), get(2), get(3)', output: '1, -1, 3', explanation: 'get(1) returns 1; put(3,3) evicts key 2; get(2) returns -1; get(3) returns 3')],
   ),
   Problem(
     id: '92',
@@ -2263,6 +2354,7 @@ class AutocompleteSystem:
     spaceComplexity: 'O(total characters)',
     explanation: 'Trie where each node stores sentence frequencies. On input, traverse trie and return top 3 by hot degree then lexicographical order.',
     hints: ['Use a Trie to store sentences.', 'At each node, store the frequency of all sentences passing through it.'],
+    examples: [Example(input: 'sentences = ["i love you","island","ironman","i love leetcode"], times = [5,3,2,2], input("i ")', output: '["i love you","i love leetcode","island"]', explanation: 'Top 3 sentences matching prefix "i " sorted by frequency')],
   ),
   Problem(
     id: '93',
@@ -2296,6 +2388,7 @@ class AutocompleteSystem:
     spaceComplexity: 'O(total characters)',
     explanation: 'Build reversed trie. On query, check reversed stream against trie. Return true if any word suffix matches.',
     hints: ['Build the trie with reversed words.', 'Check the reversed stream against the trie.'],
+    examples: [Example(input: 'words = ["cd","f","kl"], query("a"), query("b"), query("c"), query("d")', output: 'false, false, false, true', explanation: 'Suffix "d" matches word "cd"')],
   ),
   Problem(
     id: '94',
@@ -2333,6 +2426,7 @@ class AutocompleteSystem:
     spaceComplexity: 'O(cells + formulas)',
     explanation: 'Store values in 2D array and formulas separately. On get, evaluate formula if one exists.',
     hints: ['Store raw values and formulas separately.', 'Evaluate formulas recursively when getting a cell value.'],
+    examples: [Example(input: 'set(1,"A",5), set(1,"B",10), sum(1,"C",["A1:A1","B1:B1"]), get(1,"C")', output: '15', explanation: 'Cell C1 contains the sum of A1 (5) and B1 (10) which equals 15')],
   ),
   Problem(
     id: '95',
@@ -2360,6 +2454,7 @@ class AutocompleteSystem:
     spaceComplexity: 'O(n)',
     explanation: 'Store logs with timestamp and id. For retrieval, truncate timestamps based on granularity and compare prefixes.',
     hints: ['Truncate timestamps according to the specified granularity.', 'Compare truncated prefixes for range queries.'],
+    examples: [Example(input: 'put(1,"2017:01:01:23:59:59"), retrieve("2017:01:01:00:00:00","2017:01:01:23:59:59","Day")', output: '[1]', explanation: 'Log 1 is within the same day range')],
   ),
   Problem(
     id: '96',
@@ -2385,6 +2480,7 @@ class AutocompleteSystem:
     spaceComplexity: 'O(n * L)',
     explanation: 'For each word, use DP to check if it can be formed by concatenating other words from the dictionary.',
     hints: ['Use word break DP for each word.', 'Ensure the substring used is not the word itself.'],
+    examples: [Example(input: 'words = ["cat","cats","catsdogcats","dog","dogcatsdog","hippopotamuses","rat","ratcatdogcat"]', output: '["catsdogcats","dogcatsdog","ratcatdogcat"]', explanation: 'These words can be formed by concatenating other words from the list')],
   ),
   Problem(
     id: '97',
@@ -2428,6 +2524,7 @@ def remove_invalid_parentheses(s):
     spaceComplexity: 'O(n * 2^n)',
     explanation: 'BFS by removing one parenthesis at a time. Stop at the level where first valid strings are found to ensure minimum removal.',
     hints: ['Use BFS to explore strings with one fewer parenthesis.', 'Stop when you find the first valid strings at a level.'],
+    examples: [Example(input: 's = "()())()"', output: '["(())()","()()()"]', explanation: 'Removing one parenthesis yields valid strings')],
   ),
   Problem(
     id: '98',
@@ -2466,6 +2563,7 @@ def remove_invalid_parentheses(s):
     spaceComplexity: 'O(1)',
     explanation: 'Break number into chunks of thousands. Recursively convert each chunk (0-999) and append the scale (Thousand, Million, Billion).',
     hints: ['Process the number in chunks of thousands.', 'Handle numbers 1-19, 20-99, and 100-999 separately.'],
+    examples: [Example(input: 'num = 123', output: '"One Hundred Twenty Three"', explanation: '123 is expressed in English words')],
   ),
   Problem(
     id: '99',
@@ -2501,6 +2599,7 @@ class SummaryRanges:
     spaceComplexity: 'O(n)',
     explanation: 'Use sorted dict to maintain disjoint intervals. On add, merge with adjacent intervals if overlapping or contiguous.',
     hints: ['Use an ordered map to maintain intervals.', 'Merge with neighboring intervals when adding a new value.'],
+    examples: [Example(input: 'addNum(1), addNum(3), addNum(7), getIntervals()', output: '[[1,1],[3,3],[7,7]]', explanation: 'Initially each number forms its own disjoint interval')],
   ),
   Problem(
     id: '100',
@@ -2547,5 +2646,6 @@ class Skiplist:
     spaceComplexity: 'O(n) expected',
     explanation: 'Probabilistic data structure with multiple levels. Each node has random height. Search starts from top level and descends.',
     hints: ['Each node has a random level.', 'Search from the top level, going down when the next node exceeds the target.'],
+    examples: [Example(input: 'add(1), add(2), add(3), search(0), search(1)', output: 'false, true', explanation: '0 is not in the skiplist; 1 is present')],
   ),
 ];

@@ -16,6 +16,33 @@ class ProblemDetailScreen extends StatefulWidget {
 class _ProblemDetailScreenState extends State<ProblemDetailScreen> {
   bool _showHints = false;
 
+  Widget _buildExampleRow(String label, String value, Color labelColor) {
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          label,
+          style: TextStyle(
+            fontSize: 13,
+            fontWeight: FontWeight.w600,
+            color: labelColor,
+          ),
+        ),
+        const SizedBox(width: 8),
+        Expanded(
+          child: SelectableText(
+            value,
+            style: const TextStyle(
+              fontSize: 14,
+              color: Color(0xFFC9D1D9),
+              height: 1.4,
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final problem = Provider.of<ProblemProvider>(context, listen: false)
@@ -158,6 +185,44 @@ class _ProblemDetailScreenState extends State<ProblemDetailScreen> {
               }).toList(),
             ),
             const SizedBox(height: 24),
+            if (problem.examples.isNotEmpty) ...[
+              const Text(
+                'Examples',
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
+              ),
+              const SizedBox(height: 12),
+              ...problem.examples.map((example) {
+                return Padding(
+                  padding: const EdgeInsets.only(bottom: 12),
+                  child: Container(
+                    width: double.infinity,
+                    padding: const EdgeInsets.all(16),
+                    decoration: BoxDecoration(
+                      color: const Color(0xFF161B22),
+                      borderRadius: BorderRadius.circular(12),
+                      border: Border.all(color: const Color(0xFF30363D)),
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        _buildExampleRow('Input:', example.input, const Color(0xFF58A6FF)),
+                        const SizedBox(height: 8),
+                        _buildExampleRow('Output:', example.output, const Color(0xFF3FB950)),
+                        if (example.explanation != null) ...[
+                          const SizedBox(height: 8),
+                          _buildExampleRow('Explanation:', example.explanation!, const Color(0xFFFFB300)),
+                        ],
+                      ],
+                    ),
+                  ),
+                );
+              }),
+              const SizedBox(height: 24),
+            ],
             if (problem.hints.isNotEmpty) ...[
               InkWell(
                 onTap: () => setState(() => _showHints = !_showHints),

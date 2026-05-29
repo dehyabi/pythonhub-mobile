@@ -9,6 +9,7 @@ class Problem {
   final String spaceComplexity;
   final String explanation;
   final List<String> hints;
+  final List<Example> examples;
   bool isFavorite;
   bool isCompleted;
 
@@ -23,6 +24,7 @@ class Problem {
     required this.spaceComplexity,
     required this.explanation,
     this.hints = const [],
+    this.examples = const [],
     this.isFavorite = false,
     this.isCompleted = false,
   });
@@ -42,10 +44,23 @@ class Problem {
       spaceComplexity: spaceComplexity,
       explanation: explanation,
       hints: hints,
+      examples: examples,
       isFavorite: isFavorite ?? this.isFavorite,
       isCompleted: isCompleted ?? this.isCompleted,
     );
   }
+}
+
+class Example {
+  final String input;
+  final String output;
+  final String? explanation;
+
+  const Example({
+    required this.input,
+    required this.output,
+    this.explanation,
+  });
 }
 
 enum Difficulty { basic, intermediate, advanced }
