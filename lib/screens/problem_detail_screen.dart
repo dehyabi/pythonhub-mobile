@@ -295,32 +295,42 @@ class _ProblemDetailScreenState extends State<ProblemDetailScreen> {
               ),
             ),
             const SizedBox(height: 12),
-            if (!problem.isCompleted)
-              SizedBox(
-                width: double.infinity,
-                child: OutlinedButton.icon(
-                  onPressed: () {
-                    context.read<ProblemProvider>().markCompleted(problem.id);
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(
-                        content: Text('Marked as completed!'),
-                        backgroundColor: Color(0xFF238636),
-                        duration: Duration(seconds: 1),
+            SizedBox(
+              width: double.infinity,
+              child: OutlinedButton.icon(
+                onPressed: () {
+                  context.read<ProblemProvider>().toggleCompleted(problem.id);
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text(
+                        problem.isCompleted ? 'Unmarked as completed' : 'Marked as completed!',
                       ),
-                    );
-                  },
-                  icon: const Icon(Icons.check_circle_outline, color: Color(0xFF58A6FF)),
-                  label: const Text(
-                    'Mark as Completed',
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600, color: Color(0xFF58A6FF)),
-                  ),
-                  style: OutlinedButton.styleFrom(
-                    side: const BorderSide(color: Color(0xFF58A6FF)),
-                    padding: const EdgeInsets.symmetric(vertical: 14),
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                      backgroundColor: problem.isCompleted ? const Color(0xFF8B949E) : const Color(0xFF238636),
+                      duration: const Duration(seconds: 1),
+                    ),
+                  );
+                },
+                icon: Icon(
+                  problem.isCompleted ? Icons.cancel_outlined : Icons.check_circle_outline,
+                  color: problem.isCompleted ? const Color(0xFFF44336) : const Color(0xFF58A6FF),
+                ),
+                label: Text(
+                  problem.isCompleted ? 'Unmark as Completed' : 'Mark as Completed',
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w600,
+                    color: problem.isCompleted ? const Color(0xFFF44336) : const Color(0xFF58A6FF),
                   ),
                 ),
+                style: OutlinedButton.styleFrom(
+                  side: BorderSide(
+                    color: problem.isCompleted ? const Color(0xFFF44336) : const Color(0xFF58A6FF),
+                  ),
+                  padding: const EdgeInsets.symmetric(vertical: 14),
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                ),
               ),
+            ),
             const SizedBox(height: 24),
           ],
         ),

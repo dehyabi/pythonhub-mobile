@@ -72,10 +72,12 @@ class ProblemProvider extends ChangeNotifier {
     }
   }
 
-  void markCompleted(String id) {
+  void toggleCompleted(String id) {
     final index = _problems.indexWhere((p) => p.id == id);
     if (index != -1) {
-      _problems[index] = _problems[index].copyWith(isCompleted: true);
+      _problems[index] = _problems[index].copyWith(
+        isCompleted: !_problems[index].isCompleted,
+      );
       notifyListeners();
     }
   }
