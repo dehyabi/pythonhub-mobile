@@ -4,6 +4,7 @@ import '../models/problem.dart';
 import '../providers/problem_provider.dart';
 import 'problem_list_screen.dart';
 import 'favorites_screen.dart';
+import 'theory_list_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -55,6 +56,19 @@ class HomeScreen extends StatelessWidget {
                       mainAxisSpacing: 12,
                     ),
                     delegate: SliverChildListDelegate([
+                      _buildActionCard(
+                        context,
+                        'Learn Python',
+                        'History, fundamentals & advanced topics',
+                        const Color(0xFF2DBAAA),
+                        Icons.menu_book,
+                        () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (_) => const TheoryListScreen(),
+                          ),
+                        ),
+                      ),
                       _buildCategoryCard(
                         context,
                         'Basic Problems',
